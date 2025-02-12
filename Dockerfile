@@ -30,6 +30,7 @@ RUN adduser -D nonroot -u 1025 -G nonroot
 ARG IMG_TAG
 COPY --from=gaiad-builder  /src/app/build/gaiad /usr/local/bin/
 EXPOSE 26656 26657 1317 9090
+RUN echo 'hello my baby hello my honey hello my ragtime gal' > /usr/local/share/ragtime_gal.txt
 USER nonroot
 
 ENTRYPOINT ["gaiad", "start"]
