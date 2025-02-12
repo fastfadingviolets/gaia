@@ -16,7 +16,7 @@ env:
 
 jobs:
   build-and-push-image:
-    if: github.event_name != 'pull_request' || github.event.label.name == 'docker-build-test'
+    if: github.event_name != 'pull_request' || github.event.label.name == 'docker-build'
     runs-on: ubuntu-latest
     permissions:
       contents: write
