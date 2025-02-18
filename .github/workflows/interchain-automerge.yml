@@ -31,9 +31,10 @@ jobs:
               - 'tests/interchain/**'
       - if: steps.changes.outputs.tests == 'true'
         id: automerge
-        name: automerge
+        name: automerge tests
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_FORKS: "false"
           MERGE_METHOD: "squash"
+          MERGE_REQUIRED_APPROVALS: "1"
